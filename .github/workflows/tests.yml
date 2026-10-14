@@ -1,0 +1,37 @@
+# Installs and tests the formula on each change, on the platforms it supports. Written by cli/release/formula.mjs in
+# yaaa-io/yaaa; edit it there.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@main
+      - name: Audit
+        run: brew audit --strict --online --formula yaaa-io/tap/yaaa
+      - name: Install
+        run: brew install --formula yaaa-io/tap/yaaa
+      - name: Test
+        run: brew test yaaa-io/tap/yaaa
+      - name: Run it
+        env:
+          YAAA_NO_UPDATE_CHECK: "1"
+        run: |
+          export YAAA_HOME="$RUNNER_TEMP/yaaa-home"
+          yaaa --version
+          yaaa doctor 2>&1 | tee doctor.txt || true
+          grep -q 'installed with Homebrew' doctor.txt
+          yaaa update --check | grep -q 'brew upgrade yaaa'
