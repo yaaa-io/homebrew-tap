@@ -1,31 +1,31 @@
-# Written by cli/release/formula.mjs in yaaa-io/yaaa from yaaa 0.1.13's signed manifest. Don't edit it by hand:
+# Written by cli/release/formula.mjs in yaaa-io/yaaa from yaaa 0.1.14's signed manifest. Don't edit it by hand:
 # the next release replaces it.
 class Yaaa < Formula
   desc "Shopping agent for your terminal and the AI agents in it"
   homepage "https://yaaa.io"
-  version "0.1.13"
+  version "0.1.14"
   license "Apache-2.0"
 
   # The installer's tarballs: yaaa with the Node.js it runs on, so nothing else is needed.
   on_macos do
     on_arm do
-      url "https://yaaa.io/releases/0.1.13/yaaa-0.1.13-darwin-arm64.tar.gz"
-      sha256 "e89bf4603f7bbe8675d405c14b1c8c7323255907ed5b7c9306e47c1def28dbab"
+      url "https://yaaa.io/releases/0.1.14/yaaa-0.1.14-darwin-arm64.tar.gz"
+      sha256 "b192f4b6220cbafb712b9806fda81995dfcdb8e0b33993e87e0f07b00944d0a2"
     end
     on_intel do
-      url "https://yaaa.io/releases/0.1.13/yaaa-0.1.13-darwin-x64.tar.gz"
-      sha256 "c1978a3a67a0f4d095cf33a8c3d36886b8a727949ef54521514bfedc58629de4"
+      url "https://yaaa.io/releases/0.1.14/yaaa-0.1.14-darwin-x64.tar.gz"
+      sha256 "3880aa6e44796cdb06d432e3f3a4111808ee241071224745aa66b2b643f9b0b6"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://yaaa.io/releases/0.1.13/yaaa-0.1.13-linux-arm64.tar.gz"
-      sha256 "71cc38c2314a266953e9d0559a96ebfc05f80ea3003fa8e7f2bcb59760e1924b"
+      url "https://yaaa.io/releases/0.1.14/yaaa-0.1.14-linux-arm64.tar.gz"
+      sha256 "228d5872fe9a9201357f8887c6bef41cec3b3cbdebc16ba6f6b7d7f0eb077462"
     end
     on_intel do
-      url "https://yaaa.io/releases/0.1.13/yaaa-0.1.13-linux-x64.tar.gz"
-      sha256 "e776231c30f5f9a8fc860aa9246c3ef6b4fb642aea41152ab5b4f84bc28f42bf"
+      url "https://yaaa.io/releases/0.1.14/yaaa-0.1.14-linux-x64.tar.gz"
+      sha256 "32863ea6ef5fdc74d18c31eaa0efea2de7caefed149cdfee45ab1486595f0d14"
     end
   end
 
